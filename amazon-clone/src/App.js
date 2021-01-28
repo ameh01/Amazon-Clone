@@ -2,14 +2,27 @@ import React from "react";
 import "./App.css";
 import Header from "./Header";
 import Home from "./Home";
+import { BrowserRouter as Router, Switch, Route }
+from "react-router-dom";
 
 function App() {
   return (
     // BEM
-    <div className="app">
+    <Router>
+      <div className="app">
+        <Switch>
+          <Route path="/checkout">
+            <Header />
+            <p>I AM A CHECKOUT, SMASH THE LIKE BUTTON</p>
+          </Route>
+
+          <Route path="/">
             <Header />
             <Home />
-    </div>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
